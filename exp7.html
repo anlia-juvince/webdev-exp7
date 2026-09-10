@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fashion Boutique</title>
+
+<style>
+body{
+    text-align:center;
+    font-family:Arial;
+    background:#C5D3C8;
+}
+.box{
+    background:white;
+    width:350px;
+    margin:40px auto;
+    padding:25px;
+    border-radius:15px;
+}
+#dress{font-size:80px}
+select,input,button{padding:8px;margin:8px}
+button{
+    background:#568D8F;
+    color:white;
+    border:0;
+    border-radius:5px;
+}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+
+$("#color").change(function(){
+    $("#dress").css("color",$(this).val());
+});
+
+$("#size").change(function(){
+    $("#dress").css("font-size",$(this).val());
+});
+
+$("#btn").click(function(){
+    let q=$("#qty").val();
+    $("#result").html("Total Price: ₹"+q*1500);
+});
+
+});
+</script>
+</head>
+
+<body>
+
+<div class="box">
+
+<img src="C:\Users\anlia\OneDrive\Desktop\URK24CS1091_CSE\SEM 5\web lab\dress.png" width="100">
+
+<h1>Fashion Boutique</h1>
+<p>Style • Beauty • Elegance</p>
+
+<div id="dress">👗</div>
+
+<label>Dress Color:</label>
+<select id="color">
+<option>pink</option>
+<option>red</option>
+<option>blue</option>
+<option>purple</option>
+</select>
+
+<br>
+
+<label>Dress Size:</label>
+<select id="size">
+<option value="70px">Small</option>
+<option value="90px">Medium</option>
+<option value="110px">Large</option>
+</select>
+
+<br>
+
+<label>Quantity:</label>
+<input type="number" id="qty" value="1" min="1">
+
+<br>
+
+<button id="btn">Calculate Price</button>
+
+<h3 id="result"></h3>
+
+</div>
+
+</body>
+</html>
